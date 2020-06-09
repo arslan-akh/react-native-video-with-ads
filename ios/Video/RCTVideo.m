@@ -54,6 +54,7 @@ static int const RCTVideoUnset = -1;
   /* Keep track of any modifiers, need to be applied after each play */
   float _volume;
   float _rate;
+  float _maximumBitRate;
   BOOL _muted;
   BOOL _paused;
   BOOL _repeat;
@@ -415,6 +416,8 @@ static int const RCTVideoUnset = -1;
     [self playerItemForSource:source withCallback:^(AVPlayerItem * playerItem) {
       _playerItem = playerItem;
       [self addPlayerItemObservers];
+
+      _playerItem.preferredPeakBitRate = _maximumBitRate;
       
       [_player pause];
       [_playerViewController.view removeFromSuperview];
@@ -448,6 +451,11 @@ static int const RCTVideoUnset = -1;
     }];
   });
   _videoLoadStarted = YES;
+}
+
+- (void)setMaximumBitRate:(float) maximumBitRate {
+  _maximumBitRate = maximumBitRate;
+  [self applyModifiers];
 }
 
 - (NSURL*) urlFilePath:(NSString*) filepath {
