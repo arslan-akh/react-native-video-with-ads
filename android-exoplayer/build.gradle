@@ -23,7 +23,7 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     provided "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
-    compile('com.google.android.exoplayer:exoplayer:2.8.2') {
+    compile('com.google.android.exoplayer:exoplayer:2.10.4') {
         exclude group: 'com.android.support'
     }
 
@@ -32,7 +32,7 @@ dependencies {
     compile "com.android.support:support-compat:${safeExtGet('supportLibVersion', '+')}"
     compile "com.android.support:support-media-compat:${safeExtGet('supportLibVersion', '+')}"
 
-    compile('com.google.android.exoplayer:extension-okhttp:2.8.2') {
+    compile('com.google.android.exoplayer:extension-okhttp:2.10.4') {
         exclude group: 'com.squareup.okhttp3', module: 'okhttp'
     }
     compile 'com.squareup.okhttp3:okhttp:3.11.0'
