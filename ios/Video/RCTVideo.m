@@ -130,17 +130,17 @@ static int const RCTVideoUnset = -1;
 }
 
 - (void)requestAds:(NSString *) adTagUrl {
-    _adsLoader = [[IMAAdsLoader alloc] initWithSettings:nil];
-    _adsLoader.delegate = self;
-    // Create an ad display container for ad rendering.
-    IMAAdDisplayContainer *adDisplayContainer =
-    [[IMAAdDisplayContainer alloc] initWithAdContainer:self companionSlots:nil];
-    // Create an ad request with our ad tag, display container, and optional user context.
-    IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:adTagUrl
-                                                  adDisplayContainer:adDisplayContainer
-                                                     contentPlayhead:_contentPlayhead
-                                                         userContext:nil];
-    [_adsLoader requestAdsWithRequest:request];
+    // _adsLoader = [[IMAAdsLoader alloc] initWithSettings:nil];
+    // _adsLoader.delegate = self;
+    // // Create an ad display container for ad rendering.
+    // IMAAdDisplayContainer *adDisplayContainer =
+    // [[IMAAdDisplayContainer alloc] initWithAdContainer:self companionSlots:nil];
+    // // Create an ad request with our ad tag, display container, and optional user context.
+    // IMAAdsRequest *request = [[IMAAdsRequest alloc] initWithAdTagUrl:adTagUrl
+    //                                               adDisplayContainer:adDisplayContainer
+    //                                                  contentPlayhead:_contentPlayhead
+    //                                                      userContext:nil];
+    // [_adsLoader requestAdsWithRequest:request];
 }
 
 - (void)adsLoader:(IMAAdsLoader *)loader adsLoadedWithData:(IMAAdsLoadedData *)adsLoadedData {
